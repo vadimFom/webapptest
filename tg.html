@@ -5,22 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy")
-        let order = document.getElementById("order")
-
-        buy.addEventListener("click", () => {
-            document.getElementById("main").style.display = "none"
-            document.getElementById("form").style.display = "block"
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
-        });
-
-        order.addEventListener("click", () => {
-            tg.close();
-        });
-    </script>
     <title>Shop</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200:500&display=swap');
@@ -113,5 +97,21 @@
         <button id="order">Оформить</button>
     </form>
 </div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    let buy = document.getElementById("buy")
+    let order = document.getElementById("order")
+
+    buy.addEventListener("click", () => {
+        document.getElementById("main").style.display = "none"
+        document.getElementById("form").style.display = "block"
+        document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+    });
+
+    order.addEventListener("click", () => {
+        tg.close();
+    });
+</script>
 </body>
 </html>
